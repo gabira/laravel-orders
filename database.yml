@@ -1,0 +1,12 @@
+mysql:
+  image: mysql:5.7
+  ports:
+    - "3306:3306"
+  environment:
+    MYSQL_ROOT_PASSWORD: "root"
+    MYSQL_USER: "gabriel"
+    MYSQL_PASSWORD: "12345"
+    MYSQL_DATABASE: "desafio"
+  volumes:
+    - ./init:/docker-entrypoint-initdb.d/
+# sudo docker-compose -f database.yml up
